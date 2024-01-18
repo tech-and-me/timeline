@@ -1,0 +1,28 @@
+Task 2 - Requirements
+------------------------------------------------------------------------------------------------------
+
+This task tests the applicant's ability to code a solution using HTML and CSS that matches a supplied UI Design or mockup with considerations for responsive behaviour.
+
+
+Requirements:
+1) Provide a single HTML stucture that provides the expected layouts (small, medium and large)
+2) Provide styles that work with the single HTML structure to provide the expected look and feel
+3) Provide the solution is as simple a form as possible:
+	- This is not a test of whether a skeleton framework or project generation tool can be used (no NodeJS/React etc projects)
+	- The intention is to test the applicant's skills with raw/basic HTML and CSS understanding and thinking at low-level
+	- A single HTML file with included or linked CSS/styles is all that is required (just want to see the attempt by opening the HTML file in a browser locally)
+4) The result needs to show:
+	- The 3 different UI layouts (small, medium and large) being provided by a single HTML structure/example
+	- A single widget with:
+		- A timeline on left side, showing active time period state vs normal state
+		- 2 different item containers on the right
+	- The state of the item containers (expanded/collapsed)
+
+
+NOTE:  Attention to detail is important, but note that exact match of fonts and icons is not important (just use something that conveys the same intention or state)
+
+
+Bonus points for (but not expected):
+- Functional show/hide/collapse functionality, triggered by clicking on an item's container. Use the same information (label:value pairs displayed) to make things easy if providing this.
+- Use of a CSS preprocessor (but both processed and non-processed style files should be supplied)
+
