@@ -1,9 +1,9 @@
 
 main{
-   padding: 10px;
+   padding: 10px 25px;
 }
 
-.main-wrapper {
+.grid-container {
    display: grid;
    grid-template-columns: 100px 1fr;
    gap: 20px; 
@@ -22,9 +22,6 @@ main{
    font-size: 12px;
 }
 
-.time{
-   padding-left: 2rem;
-}
 
 .item-heading{
    display: flex;
@@ -80,24 +77,52 @@ i.show{
    display: inline-block;
 }
 
-.dot{
+/* Adding timeline dots */
+
+
+.grid-container  .date {
+   position: relative; 
+}
+
+.grid-container  .row1 .date::before {
+   content: "";
+   position: absolute;
+   top: 0px;
+   left: -15px; 
+   width: 10px;
+   height: 10px;
    border-radius: 50%;
+   background-color: green;
 }
 
-.full-dot{
-   font-size: 10px;
+.grid-container  .row2 .date::before {
+   content: "";
+   position: absolute;
+   top: 2px;
+   left: -15px; 
+   width: 7px;
+   height: 7px;
+   border-radius: 50%;
+   background-color: green;
 }
 
-.half-full-dot{
-   font-size: 4px;
-   border: 1px solid darkgreen;
-   padding: 2px;
+.grid-container  .row2 .date::after {
+   content: "";
+   position: absolute;
+   top: 0px;
+   left: -17px; 
+   width: 7px;
+   height: 7px;
+   border-radius: 50%;
+   background-color: transparent;
+   border: 1px solid green;
+   padding: 1px;
 }
 
-.date-dot {
-   position: relative;
-   text-align: center;
-}
+
+/* End of adding timeline dots */
+
+
 
 @media (max-width: 1200px) {
    .item-content {
