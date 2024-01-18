@@ -80,14 +80,14 @@ i.show{
 /* Adding timeline dots */
 
 
-.grid-container  .date {
+.grid-container  .date-wrapper {
    position: relative; 
 }
 
-.grid-container  .row1 .date::before {
+.grid-container  .row1 .date-wrapper::before {
    content: "";
    position: absolute;
-   top: 0px;
+   top: 4px;
    left: -15px; 
    width: 10px;
    height: 10px;
@@ -95,10 +95,10 @@ i.show{
    background-color: green;
 }
 
-.grid-container  .row2 .date::before {
+.grid-container  .row2 .date-wrapper::before {
    content: "";
    position: absolute;
-   top: 2px;
+   top: 5px;
    left: -15px; 
    width: 7px;
    height: 7px;
@@ -106,10 +106,10 @@ i.show{
    background-color: green;
 }
 
-.grid-container  .row2 .date::after {
+.grid-container  .row2 .date-wrapper::after {
    content: "";
    position: absolute;
-   top: 0px;
+   top: 3px;
    left: -17px; 
    width: 7px;
    height: 7px;
@@ -131,6 +131,9 @@ i.show{
 }
 
 @media (max-width: 768px) {
+   .date, .time{
+      display: none;
+   }
 
    .item-heading h1{
       font-size: 1.5rem;
@@ -141,9 +144,6 @@ i.show{
    .item-content{
        grid-template-columns: repeat(1, 1fr);
    }
-   
-   .date, .time{
-      display: none;
-   }
+
 }
 
