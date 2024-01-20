@@ -1,13 +1,11 @@
-/* Global Setting */
+/* ----------------------------------------------------------------- */
+/* Global Setting & Styling                                          */
+/* Style Static elements                                             */
+/* ----------------------------------------------------------------- */
+
 main{
    padding: 10px 25px;
 }
-
-.row {
-   text-align: left;
-}
-
-/* Styling Timeline Section */
 
 section.timeline-section {
    display: grid;
@@ -16,7 +14,21 @@ section.timeline-section {
    position: relative;
 }
 
-/* Styling timeline components */
+.cell {
+   text-align: left;
+}
+
+section.timeline-section  .date-wrapper {
+   position: relative; 
+}
+
+section.timeline-section  .time-wrapper {
+   position: relative; 
+}
+
+.timeline-wrapper{
+   position: relative;
+}
 
 .time-wrapper{
    margin-top: 0;
@@ -56,31 +68,17 @@ section.timeline-section {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
    gap: 20px; 
-
-}
-
-.collapsed .item-content, .collapsed.vetical-line{
-   display:none;
-}
-
-
-.expanded .item-content{
-   display: grid;
 }
 
 .sub-item-heading{
    font-weight: bolder;
 }
 
+/* ----------------------------------------------------------------- */
+/* Style Dynamic elements - differ as per user interaction or state  */
+/* ----------------------------------------------------------------- */
 
-/* Styling icons */
-.fa-circle-info{
-   position:absolute;
-   font-size: 12px;
-   padding-top:7px;
-   padding-left: 5px;
-}
-
+/*  icons  */
 .fa-circle-check{
    color: green;
    font-size: 20px;
@@ -91,76 +89,33 @@ section.timeline-section {
    font-size: 17px;
 }
 
-i.hide{
+.fa-circle-info{
+   position:absolute;
+   font-size: 12px;
+   padding-top:7px;
+   padding-left: 5px;
+}
+
+/* Show item content on expanded */
+.expanded .item-content{
+   display: grid;
+}
+
+/* hide show different icon based on status */
+.completed i.fa-triangle-exclamation{
    display: none;
 }
 
-i.show{
-   display: inline-block;
-}
-
-/* Adding timeline dots and vertical line */
-
-section.timeline-section  .date-wrapper {
-   position: relative; 
-}
-
-section.timeline-section  .time-wrapper {
-   position: relative; 
-}
-
-section.timeline-section .row1 .time-wrapper::before {
-   content: "";
-   position: absolute;
-   top: -2px;
-   left: -11%; 
-   width: 1px;
-   height: 470%;
-   background-color: lightgray;
-}
-
-
-section.timeline-section .row1 .vertical-line::before {
-   content: "";
-   position: absolute;
-   top: 5%;
-   left: -0.7rem;
-   width: 1px;
-   height: 50%;
-   background-color: lightgray;
-}
-
-section.timeline-section .row1.collapsed .vertical-line::before {
+.in-progress i.fa-circle-check{
    display: none;
 }
 
-section.timeline-section  .row1 .date-wrapper::before {
-   content: "";
-   position: absolute;
-   top: 4px;
-   left: -15.5%;
-   width: 11px;
-   height: 10px;
-   border-radius: 50%;
-   background-color: green;
-}
-
-section.timeline-section  .row2 .date-wrapper::before {
-   content: "";
-   position: absolute;
-   top: 5px;
-   left: -15%; 
-   width: 7px;
-   height: 7px;
-   border-radius: 50%;
-   background-color: green;
-}
-
-section.timeline-section  .row2 .date-wrapper::after {
+/* Outer circle - position before date  */
+.date-wrapper::after {
    content: "";
    position: absolute;
    top: 3px;
-   left: -17%; 
+   left: -16%; 
    width: 7px;
    height: 7px;
    border-radius: 50%;
@@ -169,7 +124,77 @@ section.timeline-section  .row2 .date-wrapper::after {
    padding: 1px;
 }
 
-/* Media Queries */
+/* Inner circle - position --> date */
+.date-wrapper::before {
+   content: "";
+   position: absolute;
+   top: 5px;
+   left: -14%; 
+   width: 7px;
+   height: 7px;
+   border-radius: 50%;
+   background-color:transparent;
+}
+
+/* Short vertical line - start position --> time */
+.time-wrapper::before {
+   content: "";
+   position: absolute;
+   top: -2px;
+   left: -11%; 
+   width: 1px;
+   height: 6rem;
+   background-color: lightgray;
+}
+
+/* Expanded vertical line */
+.timeline-wrapper .expanded-vertical-line::after {
+   content: "";
+   position: absolute;
+   top: 5rem;
+   left: -0.7rem;
+   width: 1px;
+   height: 89%;
+   background-color: lightgray;
+   z-index: 0;
+}
+
+/* hide expanded vertical line */
+.collapsed .item-content, .collapsed .expanded-vertical-line::before{
+   display:none;
+   height: 0px;
+}
+
+/* Remove short vertical line from the last item ( targeting the last 2 elements including pseudo-element)  */
+.timeline-wrapper:nth-last-child(-n+2) .expanded-vertical-line::after {
+   height: 0px;
+}
+
+/* Remove expanded vertical line from the last item ( targeting the last 2 elements including pseudo-element)  */
+.timeline-wrapper:nth-last-child(-n+2) .time-wrapper::before {
+   height: 0px;
+}
+
+/* hide expanded vertical line on collapsed */
+.timeline-wrapper.collapsed .expanded-vertical-line::after{
+   height: 0px;
+}
+
+/* fill circle on completed */
+.completed .date-wrapper::after{
+   background-color: green;
+}
+
+/* fill inner cirlce when in-progress */
+.in-progress .date-wrapper::before{
+   background-color: green;
+}
+
+
+/* ----------------------------------------------------------------- */
+/* Media Queries                                                     */
+/* ----------------------------------------------------------------- */
+
 @media (max-width: 1200px) {
    .item-heading h1{
       font-size: 1.6rem;
@@ -198,36 +223,35 @@ section.timeline-section  .row2 .date-wrapper::after {
       padding-left: 10px;
    }
 
-   .item-heading h1{
-      font-size: 1.3rem;
-   }
-
    .item-content{
       grid-template-columns: repeat(1, 1fr);
    }
    
-   section.timeline-section  .row1 .date-wrapper::before {
-      left: 49%; 
+   .item-heading h1{
+      font-size: 1.3rem;
    }
    
-   section.timeline-section  .row2 .date-wrapper::before {
-      left: 50%; 
+   .date-wrapper::after{
+      left: 1.2rem;
+   }
+      
+   .date-wrapper::before{
+      left:1.3rem;
    }
    
-   section.timeline-section  .row2 .date-wrapper::after {
-      top:3.5px;
-      left: 45%; 
+   .time-wrapper::before{
+      left:1.2rem;
    }
-   
-   section.timeline-section .row1 .time-wrapper::before {
+
+   .time-wrapper::before {
       height: 6.2rem;
       top: 16px;
       left: 1.5rem; 
    }
    
-   section.timeline-section .row1 .vertical-line::before {
+   .timeline-wrapper .expanded-vertical-line::after{
       width: 1px;
-      height: 45%;
+      height: 51rem;
       top: 8rem;
       left: 1.5rem;
    }
