@@ -16,131 +16,137 @@
       </header>
 
       <main>
-         <div class="grid-container">
-            <div class="cell row1 col1 date-time">
-               <p class="date-wrapper">
-                  <span class="date"> 28/02/2019 </span>
-               </p>
-               <p class="time-wrapper">
-                  <span class="time"> 08:48 </span>
-               </p>
+         <section class="timeline-section">
+            <!-- Start of grid -->
+
+            <!-- Row 1 -->
+            <div class="row row1 col1 timeline-wrapper collapsed">
+               <div>
+                  <p class="date-wrapper">
+                     <span class="date"> 28/02/2019 </span>
+                  </p>
+                  <p class="time-wrapper">
+                     <span class="time"> 08:48 </span>
+                  </p>
+               </div>
+               <div class="vertical-line"></div>
             </div>
-            <div class="cell row1 col2">
-               <div class="item-container item1">
-                  <div class="container item-heading">
-                     <h1>
-                        <i
-                           class="fa-solid fa-circle-check notification show"
-                        ></i>
-                        <i
-                           class="fa-solid fa-triangle-exclamation notification hide"
-                        ></i>
-                        Sed ut perspiciatis
-                        <i class="fa-solid fa-circle-info"></i>
-                     </h1>
-                     <div class="arrow">
-                        <i class="fa-solid fa-angle-down"></i>
-                     </div>
+
+            <div class="row row1 col2 item-wrapper collapsed">
+               <div class="item-heading">
+                  <h1>
+                     <i class="fa-solid fa-circle-check notification show"></i>
+                     <i
+                        class="fa-solid fa-triangle-exclamation notification hide"
+                     ></i>
+                     Sed ut perspiciatis
+                     <i class="fa-solid fa-circle-info"></i>
+                  </h1>
+                  <div class="arrow">
+                     <i class="fa-solid fa-angle-down"></i>
                   </div>
-                  <div class="container item-content collapsed">
-                     <div>
-                        <p class="task-header">Created</p>
-                        <p>14/06/2019</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Component</p>
-                        <p>Underwritting</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Category</p>
-                        <p>Ad Hoc Query</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Sub Category</p>
-                        <p>__</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Task</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Assigned To</p>
-                        <p>Melissa Morillo</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Due Date</p>
-                        <p>17/06/2019</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Due Time</p>
-                        <p>07:45 PM</p>
-                     </div>
+               </div>
+
+               <div class="item-content">
+                  <div>
+                     <p class="sub-item-heading">Created</p>
+                     <p>14/06/2019</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Component</p>
+                     <p>Underwritting</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Category</p>
+                     <p>Ad Hoc Query</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Sub Category</p>
+                     <p>__</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Task</p>
+                     <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Assigned To</p>
+                     <p>Melissa Morillo</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Due Date</p>
+                     <p>17/06/2019</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Due Time</p>
+                     <p>07:45 PM</p>
                   </div>
                </div>
             </div>
 
-            <div class="cell row2 col1 date-time">
-               <p class="date-wrapper">
-                  <span class="date"> 28/02/2019 </span>
-               </p>
-               <p class="time-wrapper">
-                  <span class="time"> 08:48 </span>
-               </p>
+            <!-- row 2 -->
+            <div class="row row2 col1 timeline-wrapper expanded">
+               <div>
+                  <p class="date-wrapper">
+                     <span class="date"> 28/02/2019 </span>
+                  </p>
+                  <p class="time-wrapper">
+                     <span class="time"> 08:48 </span>
+                  </p>
+               </div>
+               <div class="vertical-line"></div>
             </div>
-            <div class="cell row2 col2">
-               <div class="item-container item2">
-                  <div class="container item-heading">
-                     <h1>
-                        <i
-                           class="fa-solid fa-circle-check notification hide"
-                        ></i>
-                        <i
-                           class="fa-solid fa-triangle-exclamation notification show"
-                        ></i>
-                        Sed ut perspiciatis
-                        <i class="fa-solid fa-circle-info"></i>
-                     </h1>
-                     <div class="arrow">
-                        <i class="fa-solid fa-angle-up"></i>
-                     </div>
+
+            <div class="row row2 col2 item-wrapper expanded">
+               <div class="item-heading">
+                  <h1>
+                     <i class="fa-solid fa-circle-check notification hide"></i>
+                     <i
+                        class="fa-solid fa-triangle-exclamation notification show"
+                     ></i>
+                     Sed ut perspiciatis
+                     <i class="fa-solid fa-circle-info"></i>
+                  </h1>
+                  <div class="arrow">
+                     <i class="fa-solid fa-angle-up"></i>
                   </div>
-                  <div class="container item-content expanded">
-                     <div>
-                        <p class="task-header">Created</p>
-                        <p>14/06/2019</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Component</p>
-                        <p>Underwritting</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Category</p>
-                        <p>Ad Hoc Query</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Sub Category</p>
-                        <p>__</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Task</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Assigned To</p>
-                        <p>Melissa Morillo</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Due Date</p>
-                        <p>17/06/2019</p>
-                     </div>
-                     <div>
-                        <p class="task-header">Due Time</p>
-                        <p>07:45 PM</p>
-                     </div>
+               </div>
+               <div class="item-content">
+                  <div>
+                     <p class="sub-item-heading">Created</p>
+                     <p>14/06/2019</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Component</p>
+                     <p>Underwritting</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Category</p>
+                     <p>Ad Hoc Query</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Sub Category</p>
+                     <p>__</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Task</p>
+                     <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Assigned To</p>
+                     <p>Melissa Morillo</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Due Date</p>
+                     <p>17/06/2019</p>
+                  </div>
+                  <div>
+                     <p class="sub-item-heading">Due Time</p>
+                     <p>07:45 PM</p>
                   </div>
                </div>
             </div>
-         </div>
+         </section>
+         <!-- End of grid -->
       </main>
 
       <footer></footer>

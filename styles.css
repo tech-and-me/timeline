@@ -1,62 +1,22 @@
-
+/* Global Setting */
 main{
    padding: 10px 25px;
 }
 
-.grid-container {
+.row {
+   text-align: left;
+}
+
+/* Styling Timeline Section */
+
+section.timeline-section {
    display: grid;
    grid-template-columns: 100px 1fr;
    gap: 20px; 
    position: relative;
 }
 
-.container{
-   padding: 0px 20px;
-}
-
-.cell {
-   text-align: left;
-}
-
-.date, .time{
-   font-size: 12px;
-}
-
-
-.item-heading{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   border:1px solid rgb(244, 241, 241);
-}
-
-.item-heading h1{
-   font-size: 1.7rem;
-}
-
-.item-container{
-   border:1px solid rgb(244, 241, 241);
-   border-left: 2px solid rgb(48, 213, 48);
-   
-}
-
-.item-content{
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-   gap: 20px; 
-
-}
-
-.collapsed{
-   display:none;
-}
-
-.expanded{
-   display: grid;
-}
-
-
+/* Styling timeline components */
 
 .time-wrapper{
    margin-top: 0;
@@ -66,10 +26,54 @@ main{
    margin-bottom: 0;
 }
 
-.task-header{
+.date, .time{
+   font-size: 12px;
+}
+
+.item-wrapper{
+   border:1px solid rgb(244, 241, 241);
+   border-left: 2px solid rgb(48, 213, 48);
+}
+
+.item-wrapper div{
+   padding:0px 20px;
+}
+
+.item-heading{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   border:1px solid rgb(244, 241, 241);
+   height: 5rem;
+}
+
+.item-heading h1{
+   font-size: 1.7rem;
+}
+
+.item-content{
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+   gap: 20px; 
+
+}
+
+.collapsed .item-content, .collapsed.vetical-line{
+   display:none;
+}
+
+
+.expanded .item-content{
+   display: grid;
+}
+
+.sub-item-heading{
    font-weight: bolder;
 }
 
+
+/* Styling icons */
 .fa-circle-info{
    position:absolute;
    font-size: 12px;
@@ -95,18 +99,42 @@ i.show{
    display: inline-block;
 }
 
-/* Adding timeline dots */
+/* Adding timeline dots and vertical line */
 
-.grid-container  .date-wrapper {
+section.timeline-section  .date-wrapper {
    position: relative; 
 }
 
-.grid-container  .time-wrapper {
+section.timeline-section  .time-wrapper {
    position: relative; 
 }
 
+section.timeline-section .row1 .time-wrapper::before {
+   content: "";
+   position: absolute;
+   top: -2px;
+   left: -11%; 
+   width: 1px;
+   height: 470%;
+   background-color: lightgray;
+}
 
-.grid-container  .row1 .date-wrapper::before {
+
+section.timeline-section .row1 .vertical-line::before {
+   content: "";
+   position: absolute;
+   top: 5%;
+   left: -0.7rem;
+   width: 1px;
+   height: 50%;
+   background-color: lightgray;
+}
+
+section.timeline-section .row1.collapsed .vertical-line::before {
+   display: none;
+}
+
+section.timeline-section  .row1 .date-wrapper::before {
    content: "";
    position: absolute;
    top: 4px;
@@ -117,7 +145,7 @@ i.show{
    background-color: green;
 }
 
-.grid-container  .row2 .date-wrapper::before {
+section.timeline-section  .row2 .date-wrapper::before {
    content: "";
    position: absolute;
    top: 5px;
@@ -128,7 +156,7 @@ i.show{
    background-color: green;
 }
 
-.grid-container  .row2 .date-wrapper::after {
+section.timeline-section  .row2 .date-wrapper::after {
    content: "";
    position: absolute;
    top: 3px;
@@ -141,23 +169,6 @@ i.show{
    padding: 1px;
 }
 
-
-.grid-container .row1 .time-wrapper::before {
-   content: "";
-   position: absolute;
-   top: -2px;
-   left: -11%; 
-   width: 1px;
-   height: 76px;
-   background-color: lightgray;
-}
-
-
-/* End of adding timeline dots */
-
-
-
-
 /* Media Queries */
 @media (max-width: 1200px) {
    .item-heading h1{
@@ -165,7 +176,7 @@ i.show{
    }
    
    .item-content {
-       grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(3, 1fr); 
    }
 }
 
@@ -174,11 +185,11 @@ i.show{
       padding-left: 0;
    }
    
-   .grid-container {
+   section.timeline-section {
       grid-template-columns: 40px 1fr;
    }
    
-   .col1{
+   .timeline-wrapper{
       text-align: center;
    }
 
@@ -195,25 +206,30 @@ i.show{
       grid-template-columns: repeat(1, 1fr);
    }
    
-
-   
-   .grid-container  .row1 .date-wrapper::before {
+   section.timeline-section  .row1 .date-wrapper::before {
       left: 49%; 
    }
    
-   .grid-container  .row2 .date-wrapper::before {
+   section.timeline-section  .row2 .date-wrapper::before {
       left: 50%; 
    }
    
-   .grid-container  .row2 .date-wrapper::after {
+   section.timeline-section  .row2 .date-wrapper::after {
       top:3.5px;
       left: 45%; 
    }
    
-   .grid-container .row1 .time-wrapper::before {
-      height: 70px;
+   section.timeline-section .row1 .time-wrapper::before {
+      height: 6.2rem;
       top: 16px;
-      left: 58%; 
+      left: 1.5rem; 
+   }
+   
+   section.timeline-section .row1 .vertical-line::before {
+      width: 1px;
+      height: 45%;
+      top: 8rem;
+      left: 1.5rem;
    }
 
 }
