@@ -48,6 +48,16 @@ main{
 
 }
 
+.collapsed{
+   display:none;
+}
+
+.expanded{
+   display: grid;
+}
+
+
+
 .time-wrapper{
    margin-top: 0;
 }
@@ -184,6 +194,8 @@ i.show{
    .item-content{
       grid-template-columns: repeat(1, 1fr);
    }
+   
+
    
    .grid-container  .row1 .date-wrapper::before {
       left: 49%; 
