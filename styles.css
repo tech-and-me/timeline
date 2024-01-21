@@ -159,20 +159,21 @@ section.timeline-section  .time-wrapper {
    z-index: 0;
 }
 
-/* hide expanded vertical line */
-.collapsed .item-content, .collapsed .expanded-vertical-line::before{
-   display:none;
+
+/* Remove short vertical line from the last item ( targeting the last 2 elements including pseudo-element)  */
+.timeline-wrapper:nth-last-child(-n+2) .time-wrapper::before {
    height: 0px;
 }
 
-/* Remove short vertical line from the last item ( targeting the last 2 elements including pseudo-element)  */
+
+/* Remove expanded vertical line from the last item ( targeting the last 2 elements including pseudo-element)  */
 .timeline-wrapper:nth-last-child(-n+2) .expanded-vertical-line::after {
    height: 0px;
 }
 
-/* Remove expanded vertical line from the last item ( targeting the last 2 elements including pseudo-element)  */
-.timeline-wrapper:nth-last-child(-n+2) .time-wrapper::before {
-   height: 0px;
+/* hide expanded item content on collapsed */
+.collapsed .item-content{
+   display:none;
 }
 
 /* hide expanded vertical line on collapsed */
